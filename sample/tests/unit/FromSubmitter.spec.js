@@ -1,6 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
 import FormSubmitter from "@/components/FormSubmitter.vue";
-import flushPromises from "flush-promises";
+// import flushPromises from "flush-promises";
 
 let url = "";
 let data = "";
@@ -14,6 +14,17 @@ const mockHttp = {
     });
   }
 };
+
+var scheduler = typeof setImmediate === "function" ? setImmediate : setTimeout;
+
+function flushPromises() {
+  return new Promise(function(resolve) {
+    console.log(resolve.toString);
+    scheduler(resolve);
+  });
+}
+
+module.exports = flushPromises;
 
 describe("FromSubmitter.vue", () => {
   test("reveals a notification when submitted", async () => {
