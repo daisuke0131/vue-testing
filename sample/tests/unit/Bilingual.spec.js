@@ -3,11 +3,7 @@ import Bilingual from "@/components/Bilingual.vue";
 
 describe("Bilingual", () => {
   it("renders successfully", () => {
-    const wrapper = mount(Bilingual, {
-      mocks: {
-        $t: msg => msg
-      }
-    });
+    const wrapper = mount(Bilingual);
     console.log(wrapper.html())
   });
 });
