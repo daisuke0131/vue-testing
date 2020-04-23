@@ -6,9 +6,10 @@ describe("Emitter", () => {
     const wrapper = mount(Emitter);
 
     wrapper.vm.emitEvent();
-    wrapper.vm.emitEvent();
+    //wrapper.vm.emitEvent();
 
-    console.log(wrapper.emitted().myEvent);
+    //onsole.log(wrapper.emitted().myEvent);
+    // console.log(wrapper.emitted().myEvent);
     expect(wrapper.emitted().myEvent[0]).toEqual(["name", "password"]);
   });
 
