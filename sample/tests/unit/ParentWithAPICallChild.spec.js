@@ -10,7 +10,13 @@ describe("ParentWithAPICallChild.vue", () => {
     //   }
     // });
 
-    const wrapper = shallowMount(ParentWithAPICallChild)
+    const wrapper = mount(ParentWithAPICallChild, {
+      stubs: {
+        ComponentWithAsyncCall: true
+      }
+    });
+
+    // const wrapper = shallowMount(ParentWithAPICallChild)
 
     console.log(wrapper.html());
     expect(wrapper.find(ComponentWithAsyncCall).exists()).toBe(true);
